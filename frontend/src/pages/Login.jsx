@@ -15,6 +15,10 @@ const Login = () => {
    })
   const [serverErr,setServerErr] = useState([])
 
+  useEffect(() => {
+    setFormData({ username: "", password: "" });
+  }, []);
+
   useEffect(() =>{
     if(location?.state?.message){
       toast.success(`${location?.state?.message}`)

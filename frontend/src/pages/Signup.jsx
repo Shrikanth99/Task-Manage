@@ -121,7 +121,6 @@ const Signup = () => {
             Sign-Up
           </button>
           <Link to='/login' className="text-gray-400 hover:text-gray-200" >Already having an account? Login Here </Link>
-          <Toaster/>
         </div>
       </div>
     </div>

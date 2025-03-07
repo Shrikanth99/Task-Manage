@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import axios from "../config/axios";
 import { authActions } from "../store/reduxSlice";
@@ -39,9 +39,12 @@ const Login = () => {
       const rs = await axios.post('/api/users/login',formData)
       localStorage.setItem('token',rs?.data?.token)
       dispatch(authActions.login())
-      toast.success('Login Successfully')
+      toast.success('Login Successfully', {duration : 3000})
       setFormData({username:'',password:''})
       setServerErr([])
+      // setTimeout(() => {
+      //   navigate("/");
+      // }, 1000);
       navigate('/')
     } catch (e) {
       console.log('AE',e.response.data)
@@ -98,7 +101,6 @@ const Login = () => {
           <Link to='/signup' className="text-gray-400 hover:text-gray-200" >Not having an account? Sign-Up Here </Link>
         </div>
       </div>
-      <Toaster/>
     </div>
   );
 };

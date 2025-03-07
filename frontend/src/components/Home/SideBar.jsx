@@ -7,6 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { authActions } from "../../store/reduxSlice";
 import axios from "../../config/axios";
+import {  toast } from "react-hot-toast";
 
 const SideBar = () => {
   const navigate = useNavigate();
@@ -34,6 +35,7 @@ const SideBar = () => {
   const handleLogOut = () => {
     localStorage.removeItem("token");
     dispatch(authActions.logout());
+    toast.success('Logged Out Sucessfully',{duration : 2000})
     navigate("/login");
   };
 

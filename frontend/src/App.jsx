@@ -11,6 +11,7 @@ import Incompleted_Tasks from './pages/Incompleted_Tasks'
 import Signup from './pages/Signup'
 import Login from './pages/Login'
 import { authActions } from './store/reduxSlice'
+import { Toaster } from 'react-hot-toast'
 
 const App = () => { 
   const navigate = useNavigate()
@@ -29,7 +30,8 @@ const App = () => {
 
   return (
     <div className='bg-gray-900 text-white h-screen p-2 relative ' >
-        <Routes>
+      <Toaster position="top-right"  />
+      <Routes>
           <Route exact path='/' element={<Home/>} > 
             {/* Child-Routes */}
             <Route index  element={<AllTasks/>} />

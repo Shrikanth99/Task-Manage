@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { RxCross2 } from "react-icons/rx";
 import { data, useNavigate } from "react-router-dom";
 import axios from "../../config/axios";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 
 
 const InputData = ({inputDiv,setInputDiv,foundData,setData}) => {
@@ -126,7 +126,6 @@ const InputData = ({inputDiv,setInputDiv,foundData,setData}) => {
           ) }
 
         </div>
-        <Toaster/>
       </div>
     </>
   );

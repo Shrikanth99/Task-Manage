@@ -30,12 +30,15 @@ const Signup = () => {
     }
   },[navigate])
 
+  // handle change
   const handleChange = (e) => {
     const {name,value} = e.target;
     setFormData({
       ...formData,[name]:value
     })
   }
+
+  // for SignUp function
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -56,17 +59,6 @@ const Signup = () => {
     }
 
   }
-
-  // if(serverErr?.length > 0 ){
-  //   console.log('tt')
-  //   serverErr.map((el) => {
-  //      if( !el?.msg.trim() ){
-  //      toast.error(`${el.msg}`)
-  //      return;
-  //     }
-  //   })
-  // }
-
 
 
   useEffect(()=>{

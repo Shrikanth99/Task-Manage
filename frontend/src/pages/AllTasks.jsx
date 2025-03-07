@@ -32,6 +32,7 @@ const AllTasks = () => {
     })();
   }, [dispatch]);
 
+  // Update callback to pass as prop
   const updateData = (id) => {
     const resTask = myData?.tasks?.find((el) => {
       return el._id === id;

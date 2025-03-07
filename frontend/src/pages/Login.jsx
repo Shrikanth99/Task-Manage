@@ -41,7 +41,7 @@ const Login = () => {
       dispatch(authActions.login())
       toast.success('Login Successfully', {duration : 3000})
       setFormData({username:'',password:''})
-      setServerErr([])git 
+      setServerErr([])
       navigate('/')
     } catch (e) {
       console.log('AE',e.response.data)

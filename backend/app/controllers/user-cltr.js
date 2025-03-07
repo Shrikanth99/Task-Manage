@@ -8,6 +8,7 @@ const jwt = require('jsonwebtoken')
 
 const userCltr = {}
 
+// for signup
 userCltr.register = async(req,res) => {
     const errors = validationResult(req)
     if(!errors.isEmpty()) return res.status(400).json({ errors : errors.array() })
@@ -33,6 +34,7 @@ userCltr.register = async(req,res) => {
     }
 }
 
+// for Login
 userCltr.login = async(req,res) => {
     const errors = validationResult(req)
     if(!errors.isEmpty()) return res.status(400).json({errors : errors.array()})

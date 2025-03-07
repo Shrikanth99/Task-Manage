@@ -58,15 +58,19 @@ const AllTasks = () => {
               <IoAddCircle className="text-5xl text-gray-400  hover:text-gray-100 transition-all ease-linear duration-300 " />
             </button>
           </div>
-          {myData && (
+          {myData && myData.tasks && myData.tasks.length > 0 ? (
             <Cards
               home={true}
               setInputDiv={setInputDiv}
-              data={myData?.tasks}
+              data={myData.tasks}
               setData={setData}
               updateData={updateData}
               setFoundData={setFoundData}
             />
+          ) : (
+            <div className="text-center text-xl mt-8">
+              No-Task found, please add your task.
+            </div>
           )}
         </div>
       )}
